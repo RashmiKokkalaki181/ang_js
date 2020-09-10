@@ -6,14 +6,40 @@
    <script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.2.10/angular.min.js"></script>
    <meta name="viewport" content="width=device-width, initial-scale=1">
    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+   
    <script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.2.10/angular-route.js"></script>
-   <script type="text/javascript" src="routes.js"> </script>  
+   <script type="text/javascript" src="routes.js"> </script> 
     <script type="text/javascript" src="app.js"> </script>  
    </head>
 
 <body>
     <div ng-app="myShoppingList" ng-cloak ng-controller="myCtrl" class="w3-card-2 w3-margin" style="max-width:400px;">
-   
+        <header class="w3-container w3-light-grey  w3-padding-24" style="font-size:19px">
+            <span class = "display: inline">Users List</span>
+           
+            <i class="fa fa-shopping-cart pull-right" style="font-size:24px" >{{ products.length }}</i>
+         
+            </header>
+          <ul class="w3-ul">
+            <li ng-repeat="x in products" class="w3-padding-16">
+                <span ng-click="removeItem($index)" style="cursor:pointer;" class="w3-right w3-margin-right">×</span>
+            </li>
+          </ul>
+          <div class="w3-container w3-light-grey w3-padding-16">
+            <div class="w3-row w3-margin-top">
+              <div class="w3-col s10">
+                <input placeholder="Add Users here" ng-model="addMe" class="w3-input w3-border w3-padding">
+                
+              </div>
+              
+              <div class="w3-col s2">
+                <button ng-click="addItem()" class="w3-btn w3-padding w3-green">Add</button>
+              </div>
+           
+            </div>
+            <p class="w3-text-red">{{errortext}}</p>
+          </div>
+        </div>
 <div ng-view></div>
 
 </body>

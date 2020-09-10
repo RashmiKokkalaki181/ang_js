@@ -1,4 +1,4 @@
-var app = angular.module("myShoppingList",  []); 
+var app = angular.module("myShoppingList",  [ngRoute]); 
 // app.config(function($routeProvider) {
 //     $routeProvider
 //     .when("/", {
